@@ -1,6 +1,6 @@
 # MCHOSEProfileSelector
 
-These scripts let you automatically apply a performance profile (including motion sync, polling rate, DPI, etc.) when launching a Steam game on Linux, and switch to a power-saving profile when closing it.
+These scripts, written in Python and automated with Selenium, automatically apply a performance profile (including motion sync, polling rate, DPI, etc.) when launching a Steam game on Linux, and switch to a power-saving profile when closing it.
 
 ## Instructions
 
