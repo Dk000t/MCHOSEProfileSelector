@@ -12,6 +12,22 @@ mkdir -p $HOME/.config/chromium_profile
 ```bash
 chromium --user-data-dir=$HOME/.config/chromium_profile
 ```
+### Get the Vendor ID and Product ID of your mouse:
+```bash
+lsusb
+```
+### Create an udev rule
+```bash
+nano /etc/udev/rules.d/99-mouse-mchose.rules 
+```
+### Paste the following line into the file, making sure to include your specific mouse Vendor ID and Product ID:
+```bash
+KERNEL=="hidraw*", ATTRS{idVendor}=="3837", ATTRS{idProduct}=="100b", MODE="0666", TAG+="uaccess"
+```
+### Reload udev rules
+```bash
+udevadm control --reload && udevadm trigger
+```
 ### Open the MCHOSE webdriver website, pair your mouse and create two profiles, one called "Performance" and one called "Powersave":
 ```bash
 www.mchose.com.cn
