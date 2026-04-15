@@ -48,11 +48,11 @@ try:
     element.click()
     
 finally:
+    # Quit the browser and clean up resources
+    driver.quit()
+ 
     # Capture command-line arguments passed to the script
     cmd = sys.argv[1:]
     
     # Run the external command
     subprocess.run(cmd)
-    
-    # Quit the browser and clean up resources
-    driver.quit()
