@@ -3,15 +3,6 @@
 These scripts, written in Python and automated with Selenium, automatically apply a performance profile (including motion sync, polling rate, DPI, etc.) when launching a Steam game on Linux, and switch to a power-saving profile when closing it.
 
 ## Instructions
-
-### Create the chromium user directory:
-```bash
-mkdir -p $HOME/.config/chromium_profile
-```
-### Start Chromium using the created user directory:
-```bash
-chromium --user-data-dir=$HOME/.config/chromium_profile
-```
 ### Get the Vendor ID and Product ID of your mouse:
 ```bash
 lsusb
@@ -27,6 +18,14 @@ KERNEL=="hidraw*", ATTRS{idVendor}=="3837", ATTRS{idProduct}=="100b", MODE="0666
 ### Reload udev rules
 ```bash
 udevadm control --reload && udevadm trigger
+```
+### Create the chromium user directory:
+```bash
+mkdir -p $HOME/.config/chromium_profile
+```
+### Start Chromium using the created user directory:
+```bash
+chromium --user-data-dir=$HOME/.config/chromium_profile
 ```
 ### Open the MCHOSE webdriver website, pair your mouse and create two profiles, one called "Performance" and one called "Powersave":
 ```bash
