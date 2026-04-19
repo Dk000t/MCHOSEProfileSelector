@@ -47,10 +47,10 @@ try:
     # Click the element once it is clickable
     element.click()
     
-finally:
+finally:    
     # Quit the browser and clean up resources
     driver.quit()
- 
+    
     # Capture command-line arguments passed to the script
     cmd = sys.argv[1:]
     
