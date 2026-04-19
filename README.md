@@ -3,6 +3,9 @@
 These scripts, written in Python and automated with Selenium, automatically apply a performance profile (including motion sync, polling rate, DPI, etc.) when launching a Steam game on Linux, and switch to a power-saving profile when closing it.
 
 ## Instructions
+
+Install chromium, python and python-selenium.
+
 ### Get the Vendor ID and Product ID of your mouse:
 ```bash
 lsusb
