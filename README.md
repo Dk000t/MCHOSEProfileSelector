@@ -4,8 +4,10 @@ These scripts, written in Python and automated with Selenium, automatically appl
 
 ## Instructions
 
-Install chromium, python and python-selenium.
-
+### Install chromium, python and python-selenium:
+```bash
+yay -S chromium python python-selenium
+```
 ### Get the Vendor ID and Product ID of your mouse:
 ```bash
 lsusb
