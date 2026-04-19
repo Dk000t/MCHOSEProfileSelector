@@ -31,6 +31,10 @@ chromium --user-data-dir=$HOME/.config/chromium_profile
 ```bash
 www.mchose.com.cn
 ```
+### Copy the URL you see in the address bar for your mouse and edit it in your scripts (example from MCHOSE A7 V2 ULTRA):
+```bash
+https://www.mchose.com.cn/#/detail?deviceName=MCHOSE+A7+V2+Ultra
+```
 ### Copy the scripts to any folder you like and make scripts executable:
 ```bash
 chmod +x Performance.py Powersave.py
