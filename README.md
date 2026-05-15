@@ -24,10 +24,6 @@ KERNEL=="hidraw*", ATTRS{idVendor}=="3837", ATTRS{idProduct}=="100b", MODE="0666
 ```bash
 udevadm control --reload && udevadm trigger
 ```
-### Create the chromium user directory:
-```bash
-mkdir -p $HOME/.config/chromium_profile
-```
 ### Start Chromium using the created user directory:
 ```bash
 chromium --user-data-dir=$HOME/.config/chromium_profile
