@@ -8,23 +8,23 @@ These scripts, written in Python and automated with Selenium, automatically appl
 ```bash
 yay -S chromium python python-selenium
 ```
-### Get the Vendor ID and Product ID of your mouse:
+### Get the Vendor ID and Product ID of your mouse from:
 ```bash
 lsusb
 ```
-### Create an udev rule
+### Create an udev rule:
 ```bash
-nano /etc/udev/rules.d/99-mouse-mchose.rules 
+nano /etc/udev/rules.d/99-mouse-mchose.rules
 ```
-### Paste the following line into the file, making sure to include your specific mouse Vendor ID and Product ID:
+### Paste the following line into the file, making sure to change your specific mouse Vendor ID and Product ID in the appropriate fields:
 ```bash
 KERNEL=="hidraw*", ATTRS{idVendor}=="3837", ATTRS{idProduct}=="100b", MODE="0666", TAG+="uaccess"
 ```
-### Reload udev rules
+### Reload udev rules:
 ```bash
 udevadm control --reload && udevadm trigger
 ```
-### Start Chromium using the created user directory:
+### Start Chromium from the terminal in the specified user directory:
 ```bash
 chromium --user-data-dir=$HOME/.config/chromium_profile
 ```
@@ -34,13 +34,13 @@ www.mchose.com.cn
 ```
 ### Copy the URL you see in the address bar for your mouse and edit it in your scripts (example from MCHOSE A7 V2 ULTRA):
 ```bash
-https://www.mchose.com.cn/#/detail?deviceName=MCHOSE+A7+V2+Ultra
+URL = "https://www.mchose.com.cn/#/detail?deviceName=MCHOSE+A7+V2+Ultra"
 ```
 ### Copy the scripts to any folder you like and make scripts executable:
 ```bash
-chmod +x Performance.py Powersave.py
+chmod +x mchose_profile_switcher.py
 ```
 ### Add to Steam Game Commands (change the directory based on where your scripts are):
 ```bash
-python3 ~/Scripts/Performance.py %command%; python3 ~/Scripts/Powersave.py
+python3 ~/Scripts/mchose_profile_switcher.py Performance %command%; python3 ~/Scripts/mchose_profile_switcher.py Powersave
 ```
